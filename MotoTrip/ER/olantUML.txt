@@ -1,0 +1,70 @@
+@startuml
+
+entity "Users" as users {
+  * id : int <<PK>>
+  --
+  username : varchar
+  password : varchar
+  email : varchar
+}
+
+entity "Profiles" as profiles {
+  * user_id : int <<PK, FK>>
+  --
+  bio : text
+  profile_picture : varchar
+}
+
+entity "Meetings" as meetings {
+  * id : int <<PK>>
+  --
+  title : varchar
+  description : text
+  date : date
+  location : varchar
+  created_by : int <<FK>>
+}
+
+entity "Meeting_Users" as meeting_users {
+  * meeting_id : int <<FK, PK>>
+  * user_id : int <<FK, PK>>
+}
+
+entity "Meeting_Changes" as meeting_changes {
+  * id : int <<PK>>
+  --
+  meeting_id : int <<FK>>
+  change_type : varchar
+  change_timestamp : timestamp
+}
+
+entity "Meetings_With_Creators" as meetings_with_creators {
+  * meeting_id : int <<FK, PK>>
+  --
+  title : varchar
+  description : text
+  date : date
+  location : varchar
+  creator_username : varchar
+  creator_email : varchar
+}
+
+entity "User_Meetings" as user_meetings {
+  * username : varchar <<FK, PK>>
+  * email : varchar
+  * meeting_title : varchar
+  * meeting_date : date
+  * meeting_location : varchar
+}
+
+users ||--o{ profiles : "has"
+users ||--o{ meetings : "creates"
+users ||--o{ meeting_users : "attends"
+meetings ||--o{ meeting_users : "includes"
+meetings ||--o{ meeting_changes : "tracks changes"
+meetings ||--o{ meetings_with_creators : "has creator"
+meetings_with_creators ||--o{ users : "created by"
+user_meetings ||--o{ users : "user details"
+user_meetings ||--o{ meetings : "meeting details"
+
+@enduml
