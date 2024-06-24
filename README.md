@@ -53,7 +53,7 @@ The project includes a comprehensive design and structure for the database, ensu
 
 2. **Database Schema:**
    - The `script.sql` file contains the SQL commands to create the database structure. It defines tables, relationships, and other database elements.
-   - [View Database Script](./script.sql)
+   - [View Database Script](./sql/quary.sql)
 
 ## Design Patterns
 
