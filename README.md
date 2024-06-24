@@ -26,7 +26,7 @@ Welcome to **MotoTrip** - a comprehensive platform for motorcycle enthusiasts to
 Project is built using a variety of technologies and tools to ensure efficiency, performance, and scalability. Below is a list of the key components:
 
 1. **Front-End:**
-   - HTML, CSS, JavaScript: For structuring, styling, and client-side logic.
+   - HTML, CSS: For structuring, styling, and client-side logic.
 
 2. **Back-End:**
    - PHP: Primary server-side programming language.
