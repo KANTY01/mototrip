@@ -49,7 +49,7 @@ The project includes a comprehensive design and structure for the database, ensu
 
 1. **Entity-Relationship Diagram (ERD):**
    - The `erd.png` file in the main directory provides a visual representation of the database schema. This diagram is useful for understanding the relationships between different entities in the database.
-   - [View ERD](./erd.png)
+   - [View ERD](./diagram erd.png)
 
 2. **Database Schema:**
    - The `script.sql` file contains the SQL commands to create the database structure. It defines tables, relationships, and other database elements.
